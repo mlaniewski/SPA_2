@@ -1,0 +1,7 @@
+procedure Trzecia {
+	while d {
+		if t then {
+			d = t + 2; }
+		else {
+			a = t * a + d + k * b; }}
+	c = t + k + d; }

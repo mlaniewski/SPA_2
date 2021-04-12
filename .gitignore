@@ -1,3 +1,6 @@
 .vs
 Debug/
 SPA/Debug
+SPA/SPA.vcxproj
+SPA/SPA.vcxproj.filters
+SPA/SPA.vcxproj.user
