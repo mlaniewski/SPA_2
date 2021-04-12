@@ -1,7 +1,6 @@
 ﻿// SPA.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
 //
 
-#include "QueriesParser.h"
 #include "Builder.h"
 #include "SourceParser.h"
 #include <string>
@@ -22,41 +21,15 @@ int main(int argc, char* argv[])
 
 	//Lines below print tree to console. Uncomment for testing purposes.
 
-	//tree<std::shared_ptr<Node>>::iterator s = ast.get()->astTree->begin();
-	//tree<std::shared_ptr<Node>>::iterator e = ast.get()->astTree->end();
-	//while (s != e) {
-	//for (int i = 0; i < ast.get()->astTree->depth(s) - 2; ++i)
-	//std::cout << " ";
-	//std::cout << NODETYPE((*s)->nodeType) << std::endl;
-	//++s;
-	//}
-
-	cout << "Ready\n";
-
-	while (1)
-	{
-		getline(cin >> ws, q1);
-		getline(cin >> ws, q2);
-		query = q1 + " " + q2;
-
-		if (query != "")
-		{
-			std::list<std::string> results;
-			QueriesParser queriesParser(query, results, ast);
-			queriesParser.parseQuery();
-
-			if (queriesParser.results.empty()) {
-				cout << "none";
-			}
-			else {
-				for (auto iter = queriesParser.results.begin(); iter != queriesParser.results.end(); iter++) {
-					if (iter != queriesParser.results.begin()) cout << ", ";
-					cout << *iter;
-				}
-			}
-			cout << "\n";
-		}
+	tree<std::shared_ptr<Node>>::iterator s = ast.get()->astTree->begin();
+	tree<std::shared_ptr<Node>>::iterator e = ast.get()->astTree->end();
+	while (s != e) {
+		for (int i = 0; i < ast.get()->astTree->depth(s) - 2; ++i)
+			std::cout << " ";
+		std::cout << NODETYPE((*s)->nodeType) << " " << (*s)->getParam(NODEPARAMTYPE::Name) << " " << (*s)->getParam(NODEPARAMTYPE::Cond) << std::endl;
+		++s;
 	}
+
 
 
 }

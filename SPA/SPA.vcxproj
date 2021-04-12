@@ -101,13 +101,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\Mateusz\Desktop\cpp_boost_libs\boost_1_75_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,33 +156,17 @@
   <ItemGroup>
     <ClInclude Include="AST.h" />
     <ClInclude Include="Builder.h" />
-    <ClInclude Include="Closure.h" />
-    <ClInclude Include="ClosureResult.h" />
     <ClInclude Include="Node.h" />
-    <ClInclude Include="Pattern.h" />
     <ClInclude Include="pkb.h" />
-    <ClInclude Include="Predicate.h" />
-    <ClInclude Include="QueriesParser.h" />
-    <ClInclude Include="Selector.h" />
-    <ClInclude Include="Solver.h" />
     <ClInclude Include="SourceParser.h" />
     <ClInclude Include="tree.hh" />
-    <ClInclude Include="With.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AST.cpp" />
     <ClCompile Include="Builder.cpp" />
-    <ClCompile Include="Closure.cpp" />
-    <ClCompile Include="ClosureResult.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Pattern.cpp" />
-    <ClCompile Include="Predicate.cpp" />
-    <ClCompile Include="QueriesParser.cpp" />
-    <ClCompile Include="Selector.cpp" />
-    <ClCompile Include="Solver.cpp" />
     <ClCompile Include="SourceParser.cpp" />
     <ClCompile Include="SPA.cpp" />
-    <ClCompile Include="With.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
